@@ -4,9 +4,9 @@
 
 |Grade	|Allowances |
 |---|---|
-|A         |           	|300|
-|B     |                	|250|
-|Others  |           	    |100  |       
+|A ||300|
+|B ||250|
+|Others||100|       
 
 **Calculate the Salary at the end of the month**
 
