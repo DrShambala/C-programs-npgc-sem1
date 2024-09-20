@@ -3,10 +3,10 @@
 ## 3.	XYZ Company gives allowances to its employees depending on their grade as follows.
 
 |Grade	|Allowances |
-|---|---|
-|A ||300|
-|B ||250|
-|Others||100|       
+|---    |---|
+|A |300|
+|B |250|
+|Others|100|       
 
 **Calculate the Salary at the end of the month**
 
