@@ -1,8 +1,8 @@
 # Programme 1
 
-# 1.	WAP to calculate the commission at the end of the month for a company, which gives a 10% commission to its salesman if their monthly sales amount is Rs 10,000 or more.  
+## 1.	WAP to calculate the commission at the end of the month for a company, which gives a 10% commission to its salesman if their monthly sales amount is Rs 10,000 or more.  
 
-#include <stdio.h>
+`#include <stdio.h>
 #include <conio.h>
 int main() {
     float sales, commission = 0.0;
@@ -18,4 +18,4 @@ int main() {
     printf("The commission for the salesman is: Rs %f\n", commission);
 
     return 0;
-}
+}`
