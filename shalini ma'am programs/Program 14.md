@@ -8,19 +8,17 @@
 
 int main() {
     char str[100];
-    int i = 0;
+    
+int x,i = 0;
 
     printf("Enter a string in lowercase: ");
     gets(str);
-
-    // Convert the first letter of the string to uppercase if it's a lowercase letter
     if (islower(str[0])) {
-        str[0] = toupper(str[0]);
+        x=str[0];
+        x-=32;
+        str[0]=x;
     }
-
-    // Loop through the string
     while (str[i] != '\0') {
-        // Check for space and convert the next character to uppercase
         if (str[i] == ' ' && islower(str[i + 1])) {
             str[i + 1] = toupper(str[i + 1]);
         }
