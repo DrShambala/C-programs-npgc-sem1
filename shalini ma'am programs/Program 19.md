@@ -1,4 +1,4 @@
-# Programme 14
+# Programme 19
 
 ### 19.	Print the Pythagorean triplets between 1 to 100. 
 ### (sum of square of two successive nos. is equal to the third one) 33+ 44=52 
