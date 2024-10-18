@@ -42,6 +42,9 @@ switch(choice){
         b=b+2;
     }
     printf("\nis %.2f",sum);
+break;
+default:
+printf("Enter valid choice");
 
 }
 getch();
