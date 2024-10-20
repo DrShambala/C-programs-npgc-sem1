@@ -1,4 +1,4 @@
-# Tribonacci series
+# Fibonacci series
 ```
 #include <stdio.h>
 
