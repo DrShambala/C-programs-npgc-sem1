@@ -13,8 +13,10 @@ int main() {
         char antonyms[100];
     } dict[10]; 
     char str[50];
-
+    int z=1,ex;
     
+    while(z==1){ 
+        
 strcpy(dict[0].word, "happy");
 strcpy(dict[0].meaning, "feeling or showing pleasure");
 strcpy(dict[0].synonyms, "joyful");
@@ -67,23 +69,25 @@ strcpy(dict[9].antonyms, "modern");
 
     printf("Enter a word to search: ");
     scanf("%s", str);
-
+    if(strcmp(str, "Exit")==0){
+        z=0;
+    }
     int f = 0;  
     for (int i = 0; i < 10; i++) {
         if (strcmp(dict[i].word, str) == 0) {
             printf("Word: %s\n", dict[i].word);
             printf("Meaning: %s\n", dict[i].meaning);
             printf("Synonyms: %s\n", dict[i].synonyms);
-            printf("Antonyms: %s\n", dict[i].antonyms);
+            printf("Antonyms: %s\n\n", dict[i].antonyms);
             f = 1;
-            break;
         }
     }
 
     if (f!=1) {
         printf("Word '%s' not found in dict.\n", str);
     }
-
+    
+}
     return 0;
 }
 ```
