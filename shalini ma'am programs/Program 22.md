@@ -5,17 +5,30 @@
 void lin_ser(int *,int);
 void insertion(int *,int);
 void bubble(int *,int);
+
 void main(){
-int arr[10],i,j,num,c;
+int arr[10],i,ch;
+printf("MENU\nEnter Your Choice\npress 1 for linear search\npress 2 for binary search\npress 3 for insertion sort\npress 4 for bubble sort\n");
+scanf("%d",&ch);
 printf("Enter the array\n");
 
 for(i=0;i<10;i++){
 scanf("%d",&arr[i]);
 }
-// bubble(&arr[0],6);
-// insertion(&arr[0],6);
-// lin_ser(&arr[0],10);
+switch(ch){
+    case 1:
+    lin_ser(&arr[0],10);
+    break;
+    case 2:
+    break;
+    case 3:
+    insertion(&arr[0],10);
+    break;
+    case 4:
+    bubble(&arr[0],10)
 }
+}
+
 void lin_ser(int *arr,int n){
     int c=0,i,num;
     printf("Enter the number to search in array\n");
@@ -36,7 +49,7 @@ void insertion(int *arr,int n){
     int i,j,t;
     printf("Original array\n");
    
-    for(i=0;i<=5;i++){
+    for(i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
@@ -50,7 +63,7 @@ void insertion(int *arr,int n){
         }
     }
     printf("Sorted array\n");
-    for(i=0;i<=5;i++){
+    for(i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
 }
