@@ -1,5 +1,5 @@
 # Programme 23
-### Transpose Matrix
+### a Transpose Matrix
 ```
 #include <stdio.h>
 
@@ -51,3 +51,5 @@ void transpose(int *p, int n) {
     }
 }
 ```
+
+### b Print boundry elements
