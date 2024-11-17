@@ -3,53 +3,49 @@
 ```
 #include <stdio.h>
 
-void transpose(int *, int);
-
-int main() {
-    int arr[10][10];
-    int i, j, n;
-
-    printf("Enter size of matrix\n");
-    scanf("%d", &n);
-
-    printf("Enter elements of array\n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            scanf("%d", &arr[i][j]);
+void inputMatrix(int n, int matrix[n][n]) {
+    printf("Enter the elements of the matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrix[i][j]);
         }
     }
+}
 
-    printf("Original matrix\n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            printf("%d ", arr[i][j]);
+void displayMatrix(int n, int matrix[n][n]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
         }
         printf("\n");
     }
+}
 
-    transpose(&arr[0][0], n);
+void transp(int n, int matrix[n][n], int transpose[n][n]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+}
+
+int main() {
+    int n;
+    int matrix[10][10], transpose[10][10];
+    printf("Enter the size of the matrix: ");
+    scanf("%d", &n);
+
+    inputMatrix(n, matrix);
+    transp(n, matrix, transpose);
+    printf("\nOriginal Matrix:\n");
+    displayMatrix(n, matrix);
+    printf("\nTransposed Matrix:\n");
+    displayMatrix(n, transpose);
 
     return 0;
 }
 
-void transpose(int *p, int n) {
-    int a[10][10];
-    int i, j;
-
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            a[j][i] = *(p + i * n + j);
-        }
-    }
-
-    printf("Transposed matrix\n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            printf("%d ", a[i][j]);
-        }
-        printf("\n");
-    }
-}
 ```
 
 ### b Print boundry elements
