@@ -49,11 +49,13 @@ void transp(int n, int matrix[n][n], int transpose[n][n]) {
 }
 
 ```
-
-### b Print boundry elements
+### b determinant elements
+```
+```
+### c Print boundry elements
 ```
 #include <stdio.h>
-void boundry(int n,int arr[n][n]);
+void boundry(int n,int arr[10][10]);
 
 int main() {
   int arr[10][10];
@@ -69,7 +71,7 @@ int main() {
   boundry(n,arr);
     return 0;
 }
-void boundry(int n,int arr[n][n]){
+void boundry(int n,int arr[10][10]){
     int i,j;
      for(i=0;i<n;i++){
       for(j=0;j<n;j++){
