@@ -51,3 +51,47 @@ void transp(int n, int matrix[n][n], int transpose[n][n]) {
 ```
 
 ### b Print boundry elements
+```
+#include <stdio.h>
+void boundry(int n,int arr[n][n]);
+
+int main() {
+  int arr[10][10];
+  int i,j,n;
+  printf("Enter size of the matrix\n");
+  scanf("%d",&n);
+  printf("Enter elements of array\n");
+  for(i=0;i<n;i++){
+      for(j=0;j<n;j++){
+          scanf("%d",&arr[i][j]);
+      }
+  }
+  
+  for(i=0;i<n;i++){
+      for(j=0;j<n;j++){
+         if(i==0||j==0||i==n-1||j==n-1){
+             printf("%d ",arr[i][j]);
+         }
+         else{
+             printf("  ");
+         }
+      }
+      printf("\n");
+  }
+    return 0;
+}
+void boundry(int n,int arr[n][n]){
+    int i,j;
+     for(i=0;i<n;i++){
+      for(j=0;j<n;j++){
+         if(i==0||j==0||i==n-1||j==n-1){
+             printf("%d ",arr[i][j]);
+         }
+         else{
+             printf("  ");
+         }
+      }
+      printf("\n");
+  }
+}
+```
