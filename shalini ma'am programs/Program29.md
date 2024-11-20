@@ -1,44 +1,46 @@
-# Programme 29
-### Write a C program to copy contents of one file to another file
+# Program 29
+### Write a C Program to read a string and to find the number of alphabets,digits, vowels, consonants, spaces and special characters.
 
 ```
 #include <stdio.h>
-#include <ctype.h>
+void charCount(char str[20],int *alpha,int *vow,int *con,int *space,int *sChar);
 
 int main() {
-    char str[1000];
-    int i = 0;
-    int alphabets = 0, digits = 0, vowels = 0, consonants = 0, spaces = 0, specialChars = 0;
-
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-
-    while (str[i] != '\0') {
-        if (isalpha(str[i])) {
-            alphabets++;
-            char ch = tolower(str[i]);
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                vowels++;
-            } else {
-                consonants++;
-            }
-        } else if (isdigit(str[i])) {
-            digits++;
-        } else if (isspace(str[i])) {
-            spaces++;
-        } else {
-            specialChars++;
-        }
-        i++;
-    }
-
-    printf("Number of alphabets: %d\n", alphabets);
-    printf("Number of digits: %d\n", digits);
-    printf("Number of vowels: %d\n", vowels);
-    printf("Number of consonants: %d\n", consonants);
-    printf("Number of spaces: %d\n", spaces);
-    printf("Number of special characters: %d\n", specialChars);
-
+    char str[20];
+    int i,alpha,vow,con,space,sChar;
+    alpha=vow=con=space=sChar=0;
+    puts("Enter a string");
+    scanf("%s",str);
+    // gets(str);
+    
+    charCount(str,&alpha,&vow,&con,&space,&sChar);
+    
+    printf("alphabets are %d\nvowels are %d\nconsonent are %d\nspaces are %d\nspecial Characters are %d",alpha,vow,con,space,sChar);
     return 0;
+}
+void charCount(char str[20],int *alpha,int *vow,int *con,int *space,int *sChar)
+{
+  int i=0;
+  while(str[i] != '\0'){
+    
+    if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z')){
+      (*alpha)++;
+      if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||
+      str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U'){
+        (*vow)++;
+      }
+      else{
+        (*con)++;
+      }
+      
+    }
+    else if(str[i]==' '){
+      (*space)++;
+    }
+    else{
+    (*sChar)++;
+    }
+    i++; 
+  }
 }
 ```
