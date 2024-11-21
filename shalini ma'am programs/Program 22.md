@@ -127,3 +127,65 @@ int main() {
     return 0;
 }
 ```
+### binary search
+```
+#include <stdio.h>
+
+void sort(int arr[],int n){
+    int min,i,j;
+    for(j=0;j<n;j++){
+        min=j;
+        for(i=j;i<n;i++){
+            if(arr[min]>=arr[i]){
+                min=i;
+            }
+        }
+        
+        int temp=arr[min];
+        arr[min]=arr[j];
+        arr[j]=temp;
+    }
+    
+    
+    int r=search(arr,n);
+    if(r==-1){
+        printf("Number not found\n");
+    }
+    else{
+        printf("number found at %dth index",r);
+    }
+}
+int search(int arr[],int n){
+    int low,high,mid,t;
+    low=0;
+    high=n-1;
+    
+    printf("Enter number to search in array\n");
+    scanf("%d",&t);
+    
+    while(low<=high){
+        mid=low+(high-low)/2;
+        if(arr[mid]==t){
+            return mid;
+        }
+        else if(t>arr[mid]){
+            low=mid+1;
+        }
+        else{
+            high=mid-1;
+        }
+    }
+    
+    return -1;
+}
+int main() {
+    int arr[]={22,36,49,68,29,7};
+    int i=0,n=0;
+    while(arr[n]>0){
+        n++;
+    }
+    
+    sort(arr,n);
+    return 0;
+}
+```
