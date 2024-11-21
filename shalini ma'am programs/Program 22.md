@@ -90,3 +90,40 @@ void bubble(int *arr,int n){
     }
 }
 ```
+### SELECTION SORT
+```
+#include <stdio.h>
+
+void sort(int arr[],int n){
+    int min,i,j;
+    for(j=0;j<n;j++){
+        min=j;
+        for(i=j;i<n;i++){
+            if(arr[min]>=arr[i]){
+                min=i;
+            }
+        }
+        
+        int temp=arr[min];
+        arr[min]=arr[j];
+        arr[j]=temp;
+    }
+    
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    
+    
+}
+int main() {
+    int arr[]={22,36,49,68,29,7};
+    int i=0,n=0;
+    while(arr[n]>0){
+        n++;
+    }
+    // printf("%d",n);
+    
+    sort(arr,n);
+    return 0;
+}
+```
