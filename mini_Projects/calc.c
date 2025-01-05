@@ -47,7 +47,8 @@ do
     }
 
     printf("%d ", r);
-
+    
+    // creting a memory of your calculations
     file = fopen("history.txt", "a");
     fprintf(file, "%d %c %d = %d", n1, op, n2, r);
     fputc('\n', file);
@@ -59,3 +60,5 @@ do
     
     return 0;
 }
+// key features
+// keeps a permanent memory of your calculations
